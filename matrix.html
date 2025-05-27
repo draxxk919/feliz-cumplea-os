@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz Cumple Preity 🎀</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Quicksand", sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1,
+    h2,
+    p {
+      text-align: center;
+      color: #ff4d94;
+    }
+
+    h1 {
+      font-family: "Pacifico", cursive;
+      font-size: 3em;
+      margin-top: 1em;
+    }
+
+    h2 {
+      margin-top: -10px;
+      font-weight: normal;
+      color: #ff80bf;
+    }
+
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .carousel-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ff99cc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-img:hover {
+      transform: scale(1.1);
+    }
+
+    .countdown {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #ff3399;
+      text-align: center;
+      background-color: #fff0f5;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 2px dashed #ff99cc;
+    }
+
+    .kitty-img {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+    }
+
+    .typewriter {
+      font-size: 1.3em;
+      width: 90%;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      color: #ff3399;
+      border-right: 2px solid #ff3399;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .clouds {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://i.imgur.com/Mg9mWQA.png") repeat-x;
+      animation: moveClouds 60s linear infinite;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    @keyframes moveClouds {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -1000px 0;
+      }
+    }
+
+    .hello-kitty-talk {
+      margin: 30px auto;
+      max-width: 400px;
+      padding: 20px;
+      border: 2px dashed #ffb6c1;
+      border-radius: 20px;
+      background-color: #fff0f5;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .diary-section {
+      margin: 40px auto;
+      max-width: 600px;
+      background-color: #ffe6f9;
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px solid #ff99cc;
+    }
+
+    .diary-section h3 {
+      color: #ff3399;
+      margin-bottom: 10px;
+    }
+
+    .diary-entry {
+      background-color: #fff;
+      border-left: 4px solid #ff80bf;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      color: #333;
+    }
+
+    .secret-button {
+      display: block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .secret-message {
+      display: none;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff0f5;
+      border: 2px dashed #ff66a3;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .letter {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 500px;
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid #ff80bf;
+      text-align: center;
+      transition: transform 0.4s ease-in-out;
+      transform: rotateX(90deg);
+      transform-origin: top;
+      opacity: 0;
+    }
+
+    .letter.open {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+
+    /* Botón parpadeante */
+    @keyframes blink {
+      0%,
+      50%,
+      100% {
+        opacity: 1;
+      }
+      25%,
+      75% {
+        opacity: 0;
+      }
+    }
+
+    #final-btn {
+      display: block;
+      margin: 60px auto;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background-color: #ff4d94;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      animation: blink 1s infinite;
+    }
+
+    /* Pantalla blanca y botón reinicio */
+    #white-screen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #retry-btn {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background-color: #660033;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Matrix canvas */
+    #matrix-canvas {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 10000;
+    }
+  </style>
+</head>
+<body>
+  <div class="clouds"></div>
+
+  <audio autoplay loop>
+    <source src="tu_cancion.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio :(
+  </audio>
+
+  <!-- Corazones flotando -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Carrusel de fotos -->
+  <div class="carousel-container">
+    <img src="preity1.jpg" class="carousel-img" alt="Foto 1" />
+    <img src="preity2.jpg" class="carousel-img" alt="Foto 2" />
+    <img src="preity3.jpg" class="carousel-img" alt="Foto 3" />
+    <img src="preity4.jpg" class="carousel-img" alt="Foto 4" />
+    <img src="preity5.jpg" class="carousel-img" alt="Foto 5" />
+    <img src="preity6.jpg" class="carousel-img" alt="Foto 6" />
+    <img src="preity7.jpg" class="carousel-img" alt="Foto 7" />
+  </div>
+
+  <h1>Feliz Cumple Preity 🎂</h1>
+  <h2>28 de mayo 🎈</h2>
+  <div class="countdown" id="countdown"></div>
+
+  <!-- NUEVO BLOQUE CON HELLO KITTY Y VIDEO -->
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    "
+  >
+    <img src="hello-kitty.png" class="kitty-img" alt="Hello Kitty" />
+
+    <video
+      controls
+      style="width: 300px; max-width: 90vw; border-radius: 20px; border: 3px solid #ff99cc"
+    >
+      <source src="video_preity.mp4" type="video/mp4" />
+      Tu navegador no soporta video :(
+    </video>
+  </div>
+
+  <div class="typewriter" id="typewriter"></div>
+  <div class="hello-kitty-talk">
+    <strong>Hello Kitty dice:</strong><br />
+    "¡Feliz cumple Preity! Te amo más que a los peluches💘💘"
+  </div>
+
+  <div class="diary-section">
+    <h3>Diario de Preity</h3>
+    <div class="diary-entry">
+      Querida Preity, hoy quiero recordarte lo especial que eres y desearte un
+      día lleno de amor y alegría.
+    </div>
+    <div class="diary-entry">
+      Nunca olvides que tienes un lugar muy grande en mi corazón. Te quiero
+      mucho.
+    </div>
+  </div>
+
+  <!-- Botón parpadeante -->
+  <button id="final-btn" style="display:none;">
+    Cuando termines de apreciar todo, tócame
+  </button>
+
+  <!-- Pantalla blanca y botón de reinicio -->
+  <div id="white-screen">
+    <button id="retry-btn">Tócame para reintentar</button>
+  </div>
+
+  <!-- Pantalla estilo Matrix -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <script>
+    // Cambié la fecha objetivo para que sea ya pasado y aparezca el botón al instante
+ const targetDate = new Date('2025-05-28T00:00:00');
+
+    const countdownEl = document.getElementById("countdown");
+    const finalBtn = document.getElementById("final-btn");
+    const whiteScreen = document.getElementById("white-screen");
+    const retryBtn = document.getElementById("retry-btn");
+    const matrixCanvas = document.getElementById("matrix-canvas");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "¡Feliz cumpleaños Preity! 🎉";
+        mostrarBotonFinal();
+        clearInterval(intervalId);
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para tu día especial`;
+      }
+    }
+
+    function mostrarBotonFinal() {
+      finalBtn.style.display = "block";
+    }
+
+    finalBtn.addEventListener("click", () => {
+      // Limpiar body y mostrar pantalla blanca
+      document.body.innerHTML = "";
+      document.body.style.margin = "0";
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+
+      document.body.appendChild(whiteScreen);
+      whiteScreen.style.display = "flex";
+    });
+
+    retryBtn.addEventListener("click", () => {
+      whiteScreen.style.display = "none";
+      matrixCanvas.style.display = "block";
+      document.body.appendChild(matrixCanvas);
+      startMatrixEffect();
+let hasClicked = false;
+
+function createLoveFlashes() {
+  for (let i = 0; i < 20; i++) {
+    const span = document.createElement("span");
+    span.textContent = "💖 Te amo 💖";
+    span.style.position = "fixed";
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.top = Math.random() * 100 + "vh";
+    span.style.fontSize = "20px";
+    span.style.fontWeight = "bold";
+    span.style.color = "#ff4d94";
+    span.style.opacity = 1;
+    span.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+    document.body.appendChild(span);
+
+    setTimeout(() => {
+      span.style.opacity = 0;
+      span.style.transform = "scale(1.5)";
+      setTimeout(() => span.remove(), 1000);
+    }, 100);
+  }
+}
+
+function showFinalImage() {
+  const img = document.createElement("img");
+  img.src = "sorpresa.jpg"; // <- Aquí coloca la URL de tu imagen final
+  img.style.position = "fixed";
+  img.style.top = "50%";
+  img.style.left = "50%";
+  img.style.transform = "translate(-50%, -50%)";
+  img.style.maxWidth = "90vw";
+  img.style.maxHeight = "90vh";
+  img.style.border = "5px solid #ff99cc";
+  img.style.borderRadius = "20px";
+  img.style.boxShadow = "0 0 20px pink";
+  img.style.opacity = 0;
+  img.style.transition = "opacity 2s ease-in-out";
+  img.style.zIndex = 10001;
+  document.body.appendChild(img);
+
+  setTimeout(() => {
+    img.style.opacity = 1;
+  }, 100);
+}
+
+// Añadir el listener al canvas después de iniciar el efecto matrix
+matrixCanvas.addEventListener("click", () => {
+  if (hasClicked) return;
+  hasClicked = true;
+
+  createLoveFlashes();
+
+  setTimeout(() => {
+    showFinalImage();
+  }, 2000);
+});
+
+    });
+    function startMatrixEffect() {
+      const ctx = matrixCanvas.getContext("2d");
+
+      matrixCanvas.width = window.innerWidth;
+      matrixCanvas.height = window.innerHeight;
+
+      const fontSize = 16;
+      const columns = Math.floor(matrixCanvas.width / fontSize);
+      const drops = Array(columns).fill(1);
+
+      ctx.font = fontSize + "px monospace";
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+
+        ctx.fillStyle = "#990033"; // color guinda
+        for (let i = 0; i < drops.length; i++) {
+          ctx.fillText("Te amo", i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > matrixCanvas.height || Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 50);
+    }
+
+    // Actualiza el contador cada segundo
+    const intervalId = setInterval(updateCountdown, 1000);
+
+    // Mostrar el botón ya que la fecha está en el pasado
+    mostrarBotonFinal();
+
+    // Efecto de escritura para el mensaje de typewriter
+    const typewriterEl = document.getElementById("typewriter");
+    const message = "Que tengas el mejor cumpleaños de todos, Preity 💖";
+
+    let idx = 0;
+    function typeWriter() {
+      if (idx < message.length) {
+        typewriterEl.textContent += message.charAt(idx);
+        idx++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+  </script>
+</body>
+</html>
